@@ -1,0 +1,28 @@
+meta:
+  version: 2
+  width: 80
+  height: 22
+  timestamp: 1707604909
+  env:
+    SHELL: "/bin/bash"
+    TERM: "xterm-256color"
+
+prompt:
+  wait:
+    before: 0
+    after: 0.75
+
+group:
+  wait:
+    before: 0
+    after: 0
+
+item:
+  wait:
+    before: 0
+    after: 0.1
+
+char:
+  wait:
+    before: 0
+    after: 0.05

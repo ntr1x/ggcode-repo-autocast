@@ -1,0 +1,6 @@
+name: autocast
+scrolls:
+- path: scrolls/autocast
+targets:
+- name: casts
+  path: casts
