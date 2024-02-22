@@ -27,17 +27,30 @@ for group_index, group in data do
         if item.complete then
           template:println(`[{string.format('%.02f', time)}, "o", "{item.complete}"]`)
         end
-      elseif item.output then
-        for line in item.output:gmatch("([^\n]*)\n?") do
-          template:println(`[{string.format('%.02f', time)}, "o", "\\r{line}\\r\\n"]`)
-          -- template:println(`[{time}, "o", "\\r{line}{ if not loop.last "\\r\\n" end }]`)
-        end
       end
       time += (item.wait and item.wait.after) or (config.item and config.item.wait and config.item.wait.after) or 0
       template:println(`[{string.format('%.02f', time)}, "o", "\\r\\n"]`)
+      if item.output then
+        local lines = {}
+        for line in item.output:gmatch("([^\n]*)\n?") do
+          lines[#lines + 1] = line
+        end
+        for i, line in lines do
+          if i == #lines then
+            template:println(`[{string.format('%.02f', time)}, "o", "\\r{line}"]`)
+          else
+            template:println(`[{string.format('%.02f', time)}, "o", "\\r{line}\\r\\n"]`)
+          end
+        end
+        time += (item.wait and item.wait.after) or (config.item and config.item.wait and config.item.wait.after) or 0
+        -- template:println(`[{string.format('%.02f', time)}, "o", "\\r\\n"]`)
+      end
     end
-  else
-    template:println(`[{string.format('%.02f', time)}, "o", "{ansi_green(group.user)}:{ansi_blue(group.path)}$ "]`)
   end
   time += (group.wait and group.wait.after) or (config.group and config.group.wait and config.group.wait.after) or 0
+  if group_index == #data then
+    time += (config.prompt and config.prompt.wait and config.prompt.wait.before) or 0
+    template:println(`[{string.format('%.02f', time)}, "o", "{ansi_green(group.user)}:{ansi_blue(group.path)}$ "]`)
+    time += (config.prompt and config.prompt.wait and config.prompt.wait.after) or 0
+  end
 end
