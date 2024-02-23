@@ -1,6 +1,6 @@
-name: autocast
+name: Demo
 scrolls:
 - path: scrolls/autocast
 targets:
-- name: casts
-  path: casts
+- name: '@'
+  path: .
