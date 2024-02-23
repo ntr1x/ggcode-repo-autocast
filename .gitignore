@@ -1,0 +1,5 @@
+# Dependency directories
+ggcode_modules/
+
+# Lock file
+ggcode-info.lock
