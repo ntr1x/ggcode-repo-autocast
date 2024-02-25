@@ -1,6 +1,10 @@
-name: Demo
+name: autocast
+actions:
+- name: run
+  path: actions/run.luau
 scrolls:
-- path: scrolls/autocast
+- name: autocast
+  path: scrolls/autocast
 targets:
-- name: '@'
-  path: .
+- name: '@examples'
+  path: examples
