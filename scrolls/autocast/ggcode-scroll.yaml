@@ -1,6 +1,0 @@
-commands:
-- name: default
-  about: Default command
-  args:
-  - name: name
-    rquired: true
