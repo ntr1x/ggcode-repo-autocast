@@ -1,5 +1,8 @@
-print('Executing...')
-if args and args.verbose then
-    print('Trace info')
-end
-print('Done!')
+local ggcode = require("ggcode")
+
+ggcode.generate "@/autocast" {
+    target = '@examples',
+    variables = {
+        bundle = { name = 'ggcode' }
+    }
+}
