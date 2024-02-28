@@ -5,6 +5,9 @@ actions:
 scrolls:
 - name: autocast
   path: scrolls/autocast
+repositories:
+- name: central
+  uri: git@github.com:ntr1x/ggcode-repo-central.git
 targets:
 - name: '@examples'
   path: examples
