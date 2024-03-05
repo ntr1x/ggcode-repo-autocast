@@ -1,10 +1,10 @@
-local ac = require("autocast");
-local util = require("util");
+local ac = require("autocast")
+local object = require('util/object')
 
 local session = ac.session()
 
 local prompt = function(path)
-  return session.directory(path) and util.spread({
+  return session.directory(path) and object.spread({
     user = "dev@pc",
     path = path,
     prompt = "$"
