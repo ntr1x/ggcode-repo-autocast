@@ -1,7 +1,7 @@
 name: autocast
 actions:
-- name: run
-  path: actions/run.luau
+- name: test/autocast
+  path: test/autocast.luau
 scrolls:
 - name: autocast
   path: scrolls/autocast

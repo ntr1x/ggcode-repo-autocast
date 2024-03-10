@@ -1,3 +1,5 @@
+local object = require('util/object')
+
 local function session()
   local _directory = '.'
 
@@ -13,6 +15,14 @@ local function session()
     return true
   end
 
+  local prompt = function(path)
+    return directory(path) and object.spread({
+      user = "dev@pc",
+      path = path,
+      prompt = "$"
+    })
+  end
+
   local function eval_with_overrides(command)
     return function(overrides)
       return {
@@ -26,6 +36,7 @@ local function session()
   return {
     directory = directory,
     eval = eval,
+    prompt = prompt,
     eval_with_overrides = eval_with_overrides,
   }
 end
