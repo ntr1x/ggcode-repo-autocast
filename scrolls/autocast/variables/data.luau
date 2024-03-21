@@ -1,5 +1,5 @@
-local ac = require("autocast")
-local object = require('util/object')
+local ac = require("asciicast")
+local object = require('core/util/object')
 
 local session = ac.session()
 

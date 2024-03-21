@@ -1,4 +1,4 @@
-local object = require('util/object')
+local object = require('core/util/object')
 
 local function session()
   local _directory = '.'

@@ -1,9 +1,9 @@
-local ggcode = require("ggcode")
-local autocast = require("autocast")
+local ggcode = require("core/ggcode")
+local asciicast = require("asciicast")
 
-local session = autocast.session()
+local session = asciicast.session()
 
-ggcode.generate "@/autocast" {
+ggcode.generate "@/asciicast" {
     target = '@examples',
     variables = {
         bundle = { name = 'basic' },
