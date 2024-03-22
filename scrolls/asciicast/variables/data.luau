@@ -25,7 +25,7 @@ local res = {
     sequence = {
       session.eval "ggcode --help",
       session.eval "ggcode init --help",
-      session.eval "ggcode init --name Demo --repository central:git@github.com:ntr1x/ggcode-repo-central.git --target @:.",
+      session.eval "ggcode init --name Demo --repository core:git@github.com:ntr1x/ggcode-repo-core.git --target @:.",
       session.eval "ggcode install",
       session.eval_with_overrides "ls -la --color=always" { input = "ls -la" }
     }
